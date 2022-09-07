@@ -23,13 +23,13 @@ class Search extends Component {
           e.target.value
       )
       //After the call is made and finished, we used the promise interface to handle the next part
-      .then(response => {
+      .then((response) => {
         //counter allows us to stop it at 15 results only, and not go on forever for long load times
         //movieRows is an array that will hold all the movies (each movie will be its own component)
         var movieRows = [];
         var counter = 0;
         //run through the data until 15 results and get the information we want such as movie image, description, etc....
-        response.data.results.forEach(movie => {
+        response.data.results.forEach((movie) => {
           movie.poster_src =
             "https://image.tmdb.org/t/p/w185" + movie.poster_path;
           //Each movie has its own component and data is passed into it as props to handle and format it there
@@ -39,7 +39,6 @@ class Search extends Component {
             movieRows.push(movieRow);
           counter++;
         });
-        {/*store the movieRows array to ours local state variable "rows"*/}
         this.setState({ rows: movieRows });
       });
   }
@@ -50,13 +49,12 @@ class Search extends Component {
         <div className="box">
           {/*Text information about our application and what it is*/}
           <h1 className="title">Welcome to Movie Decider!</h1>
-          <p className="info">A simplistic movie recommender</p>
           {/*Search input field to take in user input and pass the input to our function "handleSearch" to make a server call*/}
           {/*Will call the function when input is changed using the built in "onChange"*/}
           <div className="searchBox">
             <input
               className="searchBar"
-              onChange={e => this.handleSearch(e)}
+              onChange={(e) => this.handleSearch(e)}
               placeholder="Search for a movie..."
             />
             {/*Small "search" logo on the far right side of search box*/}

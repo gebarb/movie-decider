@@ -1,8 +1,13 @@
-Demo build link
+# Movie Decider 
 
-https://elegant-banach-ec9603.netlify.com/
+## React + JavaScript
 
-How to run application
+### Deployment Steps
 
-1. npm install
-2. npm start
+1. Fork or clone the code repository with Git
+1. Standard `npm install` command
+1. Preview locally with the `npm run start` command
+1. Build a deployable package with the `npm run build` command
+
+#### Demo
+https://movie.graysonebarb.com/

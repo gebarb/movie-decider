@@ -18,15 +18,14 @@ class SimilarMovie extends React.Component {
           this.props.array[this.state.counter].id +
           "?api_key=886cbad81f9f93405487e46a949d9eec"
       )
-      .then(response => {
+      .then((response) => {
         //Once callback is done from server, gets all the data from that ID (movie ID) and increments to next one incase
-      //user clicks next
+        //user clicks next
         this.setState({ data: response.data, counter: this.state.counter + 1 });
       });
   };
 
   render() {
-    {/*Destructor of variables used for code standards we decided on*/}
     const {
       original_title,
       tagline,
@@ -38,7 +37,7 @@ class SimilarMovie extends React.Component {
       // production_companies,
       genres,
       poster_path,
-      backdrop_path
+      backdrop_path,
     } = this.state.data;
 
     //gets the genres from the movie and returns a list of spans formatted
@@ -73,7 +72,7 @@ class SimilarMovie extends React.Component {
         <div
           className="test"
           style={{
-            backgroundImage: bg
+            backgroundImage: bg,
           }}
         >
           <img className="card-img" alt="poster" src={poster} />

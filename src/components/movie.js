@@ -30,7 +30,7 @@ class Movie extends React.Component {
     window.location.href = url;
     return 0;
   };
-    //Currently being modified for next iteration
+  //Currently being modified for next iteration
   viewActors = () => {
     axios
       .get(
@@ -38,7 +38,7 @@ class Movie extends React.Component {
           this.props.movie.id +
           "/credits?api_key=cfe422613b250f702980a3bbf9e90716"
       )
-      .then(response => {
+      .then((response) => {
         console.log(response.data.cast);
       });
   };
@@ -54,7 +54,7 @@ class Movie extends React.Component {
           "/recommendations?&api_key=cfe422613b250f702980a3bbf9e90716"
       )
       //if no results come back then set state of similar to false so we can handle it accordingly
-      .then(response => {
+      .then((response) => {
         if (response.data.results.length === 0) {
           this.setState({ similar: false });
           this.onOpenModal();
@@ -70,7 +70,7 @@ class Movie extends React.Component {
               "?api_key=886cbad81f9f93405487e46a949d9eec"
           )
           //After set state to that information and openthe modal
-          .then(response => {
+          .then((response) => {
             this.setState({ data: response.data, array: array });
             this.onOpenModal();
           });
@@ -93,7 +93,7 @@ class Movie extends React.Component {
           </div>
         </div>
         <div>
-        {/*Inside the modal is the component with the IDs passed in so it can be formatted there*/}
+          {/*Inside the modal is the component with the IDs passed in so it can be formatted there*/}
           <Modal open={this.state.open} onClose={this.onCloseModal}>
             {this.state.similar ? (
               <SimilarMovie data={this.state.data} array={this.state.array} />
